@@ -18,42 +18,24 @@
                 <?php _e("PUBLICATION_ADD_SUCCESS"); ?>
             </div>
         <?php endif; ?>
-        <h2 class="text-center"><?php _e("PUBLICATION_ADD_HTMLTITLE"); ?></h2>
+        <h2 class="text-center"><?php _e("PUBLISHER_ADD_HTMLTITLE"); ?></h2>
         <hr>
         <form class="form-horizontal" role="form" action="../formHandler.php" method="post">
             <div class="form-group">
-                <label class="control-label col-sm-3" for="publication[isbn]"><?php _e("PUBLICATION_ADD_ISBN"); ?></label>
+                <label class="control-label col-sm-3" for="publisher[title]"><?php _e("PUBLISHER_ADD_HTMLTITLE"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="publication[isbn]" type="text" size="30">
+                    <input class="form-control" name="publisher[title]" type="text" size="128">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3" for="publication[title]"><?php _e("PUBLICATION_ADD_TITLE"); ?></label>
+                <label class="control-label col-sm-3" for="publisher[address]"><?php _e("PUBLISHER_ADD_ADDRESS"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="publication[title]" type="text" size="128" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="publication[edition]"><?php _e("PUBLICATION_ADD_EDITION"); ?></label>
-                <div class="col-sm-6">
-                    <input class="form-control" name="publication[edition]" type="number" size="4" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="publication[numpages]"><?php _e("PUBLICATION_ADD_NUMPAGES"); ?></label>
-                <div class="col-sm-6">
-                    <input class="form-control" name="publication[numpages]" type="number" size="4">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="publication[published]"><?php _e("PUBLICATION_ADD_PUBLISHED"); ?></label>
-                <div class="col-sm-6">
-                    <input class="form-control" name="publication[published]" type="date" size="4" required>
+                    <input class="form-control" name="publisher[address]" type="text" size="128" required>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default"><?php _e("PUBLICATION_ADD_SUBMIT"); ?></button>
+                    <button type="submit" class="btn btn-default"><?php _e("BUTTON_ADD_SUBMIT"); ?></button>
                 </div>
             </div>
         </form>
