@@ -15,7 +15,7 @@
             <div class="row">&nbsp;</div>
             <div class="alert alert-success">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <?php _e("PUBLICATION_ADD_SUCCESS"); ?>
+                <?php _e("PUBLISHER_ADD_SUCCESS"); ?>
             </div>
         <?php endif; ?>
         <h2 class="text-center"><?php _e("PUBLISHER_ADD_HTMLTITLE"); ?></h2>
@@ -24,13 +24,13 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="publisher[title]"><?php _e("PUBLISHER_ADD_HTMLTITLE"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="publisher[title]" type="text" size="128">
+                    <input class="form-control" name="publisher[title]" type="text" size="128" required>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-3" for="publisher[address]"><?php _e("PUBLISHER_ADD_ADDRESS"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="publisher[address]" type="text" size="128" required>
+                    <input class="form-control" name="publisher[address]" type="text" size="128">
                 </div>
             </div>
             <div class="form-group">

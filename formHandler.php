@@ -18,6 +18,9 @@ if (isset($_POST['publication']) && count($_POST['publication'])) {
     }
 }
 
+
+
+
 function validate(&$postParams, &$db) {
     foreach ($postParams as $field => &$value) {
         $value = mysqli_real_escape_string($db, $value);

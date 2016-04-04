@@ -52,6 +52,14 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-sm-3" for="publication[author]"><?php _e("PUBLICATION_ADD_AUTHOR"); ?></label>
+                <div class="col-sm-6">
+                    <select>
+                        <?php getAuthors(); ?>
+                    </select> 
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-sm-offset-3 col-sm-6">
                     <button type="submit" class="btn btn-default"><?php _e("BUTTON_ADD_SUBMIT"); ?></button>
                 </div>

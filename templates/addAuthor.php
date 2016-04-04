@@ -15,7 +15,7 @@
             <div class="row">&nbsp;</div>
             <div class="alert alert-success">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <?php _e("PUBLICATION_ADD_SUCCESS"); ?>
+                <?php _e("AUTHOR_ADD_SUCCESS"); ?>
             </div>
         <?php endif; ?>
         <h2 class="text-center"><?php _e("AUTHOR_ADD_HTMLTITLE"); ?></h2>
@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="author[firstname]"><?php _e("AUTHOR_ADD_FIRST_NAME"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="author[firstname]" type="text" size="128">
+                    <input class="form-control" name="author[firstname]" type="text" size="128" required>
                 </div>
             </div>
             <div class="form-group">
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="author[born]"><?php _e("AUTHOR_ADD_BORN"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="author[born]" type="date" size="4" required>
+                    <input class="form-control" name="author[born]" type="date" size="4">
                 </div>
             </div>
             <div class="form-group">
@@ -48,7 +48,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="author[nationality]"><?php _e("AUTHOR_ADD_NATIONALITY"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="author[nationality]" type="text" size="128" required>
+                    <input class="form-control" name="author[nationality]" type="text" size="128">
                 </div>
             </div>
             <div class="form-group">

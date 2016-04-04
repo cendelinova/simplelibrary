@@ -15,7 +15,7 @@
             <div class="row">&nbsp;</div>
             <div class="alert alert-success">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <?php _e("PUBLICATION_ADD_SUCCESS"); ?>
+                <?php _e("GENRE_ADD_SUCCESS"); ?>
             </div>
         <?php endif; ?>
         <h2 class="text-center"><?php _e("GENRE_ADD_HTMLTITLE"); ?></h2>
@@ -24,7 +24,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="genre[title]"><?php _e("GENRE_ADD_TITLE"); ?></label>
                 <div class="col-sm-6">
-                    <input class="form-control" name="genre[title]" type="text" size="128">
+                    <input class="form-control" name="genre[title]" type="text" size="128" required>
                 </div>
             </div>
             <div class="form-group">

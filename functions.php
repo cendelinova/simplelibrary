@@ -51,3 +51,26 @@ function getInsertQuery($table, $insertArray) {
             implode("`,`", array_keys($insertArray)),
             implode("','", $insertArray));
 }
+
+
+
+function getAuthors() {
+    $db = getDb();
+    $query = "SELECT firstname, lastname FROM authors";
+
+    $result = mysqli_query($db, $query);
+
+    if ($result = mysqli_query($db, $query)) {
+        $i = 1;
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo'<option value="author'.$i.'">'.$row["firstname"]." ". $row["lastname"].'</option>';
+            $i++;
+        }
+        //uvolni pamet
+        mysqli_free_result($result);
+    } else {
+        echo $query.PHP_EOL;
+        echo mysqli_error($db);
+    }
+    mysqli_close($db); 
+}
