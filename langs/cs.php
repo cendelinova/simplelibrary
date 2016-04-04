@@ -21,5 +21,15 @@ $translations = [
     "AUTHOR_ADD_DECEASED" 		=> "Datum úmrtí",
     "AUTHOR_ADD_NATIONALITY" 	=> "Národnost",
 
+    "GENRE_ADD_HTMLTITLE" 		=> "Přidat žánr",
+    "GENRE_ADD_TITLE"     		=> "Název",
+
+    "AGERANGE_ADD_HTMLTITLE" 	=> "Přidat věkové rozpětí",
+    "AGERANGE_ADD_TITLE"     	=> "Název",
+    "AGERANGE_ADD_YEARS_FROM" 	=> "Od",
+    "AGERANGE_ADD_YEARS_TO"     => "Do",
+
+
+
     "BUTTON_ADD_SUBMIT"    		=> "Přidat",
 ];

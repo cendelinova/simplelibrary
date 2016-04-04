@@ -20,6 +20,10 @@ $translations = [
     "AUTHOR_ADD_DECEASED" 		=> "Date of death",
     "AUTHOR_ADD_NATIONALITY" 	=> "Nationality",
 
+    "GENRE_ADD_HTMLTITLE" 		=> "Add genre",
+    "GENRE_ADD_TITLE"     => "Title",
+
+
 
     "BUTTON_ADD_SUBMIT"    		=> "Add",
 ];
