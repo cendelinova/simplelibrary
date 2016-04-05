@@ -5,8 +5,9 @@
  */
 $cfg = [
     // database credentials
-    "dbHost" => "localhost",
-    "dbUser" => "root",
-    "dbPass" => "",
-    "dbBase" => "simplelibrary"
+    "dbHost" 			=> "localhost",
+    "dbUser" 			=> "root",
+    "dbPass" 			=> "",
+    "dbBase" 			=> "simplelibrary",
+    "default_language" 	=> "en",
 ];

@@ -1,0 +1,10 @@
+.flags {
+    float:right;
+    margin: 10px 10px;
+}
+
+.flags img {
+    padding-left:7px;
+    height:30px;
+    width:50px;
+}

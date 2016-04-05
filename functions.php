@@ -2,6 +2,8 @@
 
 require("config.php");
 
+
+
 /**
  * Connects to database by provided credentials
  *
@@ -9,7 +11,6 @@ require("config.php");
  */
 function getDb() {
     global $cfg;
-
     return mysqli_connect($cfg["dbHost"], $cfg["dbUser"], $cfg["dbPass"], $cfg["dbBase"]);
 }
 
@@ -20,9 +21,10 @@ function getDb() {
  * @return string       translated string
  */
 function __($word) {
+    global $cfg;
     if (isset($_GET['lang'])) {
         include("langs/".$_GET['lang'].".php");
-    }
+    } else include("langs/".$cfg["default_language"].".php"); 
 
     return isset($translations[$word]) ? $translations[$word] : $word;
 }
@@ -107,6 +109,13 @@ function validate(&$postParams, &$db) {
 
 //echo "error occurred";
 
+/**
+ * Inserts into database recording to the table
+ *
+ * @param  array  $postParams  variable $_POST
+ * @param  string $table      name of the table
+ * @return void              
+ */
 function insertIntoDatabase(&$postParams, $table) {
     if (isset($postParams) && count($postParams)) {
         $db = getDb();

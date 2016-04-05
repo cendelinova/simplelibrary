@@ -3,21 +3,6 @@
 require("functions.php");
 
 
-/*if (isset($_POST['publication']) && count($_POST['publication'])) {
-    $db = getDb();
-    validate($_POST['publication'], $db);
-
-    $query = getInsertQuery("publications", $_POST['publication']);
-    if (mysqli_query($db, $query)) {
-        $location = $_SERVER["HTTP_REFERER"];
-        $location.= (strpos($_SERVER["HTTP_REFERER"], "success=1") === false) ? "&success=1" : "";
-        header("Location: $location");
-        exit();
-    } else {
-        echo $query.PHP_EOL;
-        echo mysqli_error($db);
-    }
-}*/
 
 switch (isset($_POST)) {
     case isset($_POST['publication']):
@@ -36,14 +21,29 @@ switch (isset($_POST)) {
         insertIntoDatabase($_POST['agerange'], 'agerange');
         break;
     default:
-        echo 'haha default';
+        echo 'default';
         break;
 }
 
 
 
+/*if (isset($_POST['publication']) && count($_POST['publication'])) {
+    $db = getDb();
+    validate($_POST['publication'], $db);
 
-/*function validate(&$postParams, &$db) {
+    $query = getInsertQuery("publications", $_POST['publication']);
+    if (mysqli_query($db, $query)) {
+        $location = $_SERVER["HTTP_REFERER"];
+        $location.= (strpos($_SERVER["HTTP_REFERER"], "success=1") === false) ? "&success=1" : "";
+        header("Location: $location");
+        exit();
+    } else {
+        echo $query.PHP_EOL;
+        echo mysqli_error($db);
+    }
+}
+
+function validate(&$postParams, &$db) {
     foreach ($postParams as $field => &$value) {
         $value = mysqli_real_escape_string($db, $value);
         switch ($field) {
