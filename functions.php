@@ -52,7 +52,11 @@ function getInsertQuery($table, $insertArray) {
             implode("','", $insertArray));
 }
 
-
+/**
+ * Gets all authors from database
+ *
+ * @return void
+ */
 
 function getAuthors() {
     $db = getDb();
@@ -73,4 +77,51 @@ function getAuthors() {
         echo mysqli_error($db);
     }
     mysqli_close($db); 
+}
+
+function validate(&$postParams, &$db) {
+    foreach ($postParams as $field => &$value) {
+        $value = mysqli_real_escape_string($db, $value);
+        switch ($field) {
+            case 'isbn':
+            case 'title':
+                if (filter_var($value, FILTER_SANITIZE_STRING) === false) {
+                    $error = "$value musi byt string";
+                    break 2;
+                }
+                break;
+            case 'edition':
+            case 'numpages':
+                if (filter_var($value, FILTER_VALIDATE_INT) === false) {
+                    $error = "$value musi byt int";
+                    break 2;
+                }
+                break;
+        }
+    }
+
+    if (isset($error)) {
+        die($error);
+    }
+}
+
+//echo "error occurred";
+
+function insertIntoDatabase(&$postParams, $table) {
+    if (isset($postParams) && count($postParams)) {
+        $db = getDb();
+        validate($postParams, $db);
+
+        $query = getInsertQuery($table, $postParams);
+        if (mysqli_query($db, $query)) {
+            $location = $_SERVER["HTTP_REFERER"];
+            $location.= (strpos($_SERVER["HTTP_REFERER"], "success=1") === false) ? "&success=1" : "";
+            header("Location: $location");
+            exit();
+        } else {
+            echo $query.PHP_EOL;
+            echo mysqli_error($db);
+        }
+    }
+
 }

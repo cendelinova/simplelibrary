@@ -2,7 +2,8 @@
 
 require("functions.php");
 
-if (isset($_POST['publication']) && count($_POST['publication'])) {
+
+/*if (isset($_POST['publication']) && count($_POST['publication'])) {
     $db = getDb();
     validate($_POST['publication'], $db);
 
@@ -16,12 +17,33 @@ if (isset($_POST['publication']) && count($_POST['publication'])) {
         echo $query.PHP_EOL;
         echo mysqli_error($db);
     }
+}*/
+
+switch (isset($_POST)) {
+    case isset($_POST['publication']):
+        insertIntoDatabase($_POST['publication'], 'publications');
+        break;
+    case isset($_POST['author']):
+        insertIntoDatabase($_POST['author'], 'authors');
+        break;
+    case isset($_POST['genre']):
+        insertIntoDatabase($_POST['genre'], 'genres');
+        break;
+    case isset($_POST['publisher']):
+        insertIntoDatabase($_POST['publisher'], 'publishers');
+        break;
+    case isset($_POST['agerange']):
+        insertIntoDatabase($_POST['agerange'], 'agerange');
+        break;
+    default:
+        echo 'haha default';
+        break;
 }
 
 
 
 
-function validate(&$postParams, &$db) {
+/*function validate(&$postParams, &$db) {
     foreach ($postParams as $field => &$value) {
         $value = mysqli_real_escape_string($db, $value);
         switch ($field) {
@@ -47,4 +69,4 @@ function validate(&$postParams, &$db) {
     }
 }
 
-echo "error occurred";
+echo "error occurred";*/

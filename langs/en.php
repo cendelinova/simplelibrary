@@ -7,6 +7,7 @@ $translations = [
     "PUBLICATION_ADD_NUMPAGES"  => "Number of pages",
     "PUBLICATION_ADD_EDITION"   => "Edition",
     "PUBLICATION_ADD_PUBLISHED" => "Published date",
+    "PUBLICATION_ADD_AUTHOR"    => "Author",
     "PUBLICATION_ADD_SUCCESS"   => "Publication has been added successfully!",
 
     "PUBLISHER_ADD_HTMLTITLE" 	=> "Add publisher",
